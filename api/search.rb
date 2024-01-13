@@ -33,7 +33,8 @@ def get_thread_ids(context, group_ids, local_params, search_text)
         {:terms => {:group_id => group_ids}}
     )
   end
-
+  puts "==must=======#{must}"
+  puts "==filter=======#{filter}"
   body = {
     size: CommentService.config['max_deep_search_comment_count'].to_i,
     sort: [
